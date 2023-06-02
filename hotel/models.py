@@ -3,15 +3,15 @@ from django.contrib.auth.models import User
 
 class Rezervation(models.Model):
     CITY=(
-        (1,'Antalya'),
-        (2,'Izmir'),
-        (3,'Istanbul'),
-        (4,'Fethiye'),
-        (5,'Bodrum'),
-        (6,'Datça'),
-        (7,'Urla'),
+        ('ANT','Antalya'),
+        ('IZ','Izmir'),
+        ('IST','Istanbul'),
+        ('FET','Fethiye'),
+        ('BOD','Bodrum'),
+        ('DAT','Datça'),
+        ('URL','Urla'),
     )
-    vacation=models.IntegerField(choices=CITY)
+    vacation=models.CharField(max_length=16,choices=CITY)
     start_date=models.DateField()
     finish_date=models.DateField()
     visitor_number=models.IntegerField()
